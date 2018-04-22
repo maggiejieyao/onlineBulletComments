@@ -3,31 +3,61 @@
     <head>
         <meta charset="UTF-8">
         <title>Bullet subtitles for PDF</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script>
-           $(document).ready(function(){
-               $("#btn").click(function(){
-                   $("pdf").contents.find("#pdf_content").css(
-                   "display","none");
-               });
-           });
-            
+        <style type="text/css">
+            body{
+                text-align: center;
+                background-color: beige;
+            }
+            .headerCont{
+                padding: 20px;
+                background-color: antiquewhite;
+            }
+            .container{
+                background-color: beige;
+            }
+            form{
+                padding: 10px;
+            }
+            object{
+                width: 400px;
+                height: 500px;
+            }
+            .pdf{
+                display: none;
+            }
+        </style>
+        <script language="JavaScript">
+            function change(el) {
+                var elems =document.getElementsByClassName(el);  
+                
+                for (var i=0;i<elems.length;i+=1){
+                    elems[i].style.display = 'block';
+                }
+                
+                return;
+            }
         </script>
     </head>
-    
-    
-    <body>
-        <form enctype="multipart/form-data" style="text-align: center; margin-top:30px;">
-            <input type="file" name="photo"/>
-            <input type="hidden" name="MAX_FILE_SIZE" value="204800" />
-            <input type="hidden" name="type" value="webfile"/>
-            <input id = "btn" type="submit" name = "submit" value = "submit"/>
-        </form>
-        <div style="text-align: center" id="pdf">
-            <object width="400" height="500" type="application/pdf" data="Assignment1.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" id="pdf_content">
-                <p>Insert your error message here, if the PDF cannot be displayed.</p>
-            </object>
+    <header>
+        <div class = "headerCont">
+            <h1>Bullet subtitles for PDF</h1>
         </div>
         
+    </header>
+    
+    <body>
+        <div class = "container">
+            <form enctype="multipart/form-data" method="post">
+                <input type="file" name="photo"/>
+                <input type="hidden" name="MAX_FILE_SIZE" value="204800" />
+                <input type="hidden" name="type" value="webfile"/>
+            </form>
+            <input id = "btn" type="submit" name = "submit" value = "submit" onclick= "change('pdf')" />
+            <div class="pdf">
+                <object type="application/pdf" data="Assignment1.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" id="pdf_content">
+                    <p>Insert your error message here, if the PDF cannot be displayed.</p>
+                </object>
+            </div>
+        </div>
     </body>
 </html>
