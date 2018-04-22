@@ -2,60 +2,103 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Bullet subtitles for PDF</title>
+        <title>Bullet Subtitles For A PDF</title>
         <style type="text/css">
             body{
                 text-align: center;
                 background-color: beige;
             }
+            
             .headerCont{
                 padding: 20px;
                 background-color: antiquewhite;
             }
+            
             .container{
                 background-color: beige;
+                width: 100%;
+            }
+            .lowerCont{
+                margin-left: 180px;
             }
             form{
                 padding: 10px;
+                width: 50%;
+                text-align: right
+                
             }
+            
             object{
                 width: 400px;
                 height: 500px;
             }
+            
+            .rightBtn{
+                margin: -30px 0 0 0;
+                float: right;
+                width: 50%;
+                text-align: left;
+            }
+            
             .pdf{
                 display: none;
             }
         </style>
         <script language="JavaScript">
-            function change(el) {
+            function displayFile(el) {
+                //getFilePath();
+                var fullPath = document.getElementById("fileName").value;
+                var simpleFN = fullPath.split(/(\\|\/)/g).pop();
+                simpleFN = simpleFN+"?#zoom=85&scrollbar=0&toolbar=0&navpanes=0";
+                //document.getElementById("pdf_content").object.location.href = simpleFN;
+                var textFile = document.getElementsByClassName('pdf_content').data;
+                alert(textFile);
                 var elems =document.getElementsByClassName(el);  
                 
                 for (var i=0;i<elems.length;i+=1){
-                    elems[i].style.display = 'block';
+                    if(elems[i].style.display == 'block'){
+                        elems[i].style.display = 'none';
+                    }else{
+                        elems[i].style.display = 'block'
+                    }
                 }
                 
                 return;
             }
+            function getFilePath(){
+                var fullPath = document.getElementById("fileName").value;
+                var simpleFN = fullPath.split(/(\\|\/)/g).pop();
+                simpleFN = simpleFN+"?#zoom=85&scrollbar=0&toolbar=0&navpanes=0";
+                document.getElementById("pdf_content").object.location.href = simpleFN;
+            }
+            document.addEventListener('click', function(){
+                displayFile('pdf');
+            })
         </script>
     </head>
     <header>
         <div class = "headerCont">
-            <h1>Bullet subtitles for PDF</h1>
+            <h1>Bullet Subtitles For A PDF</h1>
         </div>
         
     </header>
     
     <body>
         <div class = "container">
-            <form enctype="multipart/form-data" method="post">
-                <input type="file" name="photo"/>
-                <input type="hidden" name="MAX_FILE_SIZE" value="204800" />
-                <input type="hidden" name="type" value="webfile"/>
-            </form>
-            <input id = "btn" type="submit" name = "submit" value = "submit" onclick= "change('pdf')" />
+            <div class = "lowerCont">
+                <form enctype="multipart/form-data" method="post">
+                    <input type="file" name="file" id = "fileName"/>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="204800" />
+                    <input type="hidden" name="type" value="webfile"/>
+                </form>
+                <div class = "rightBtn">
+                    <input id = "btn" type="submit" name = "submit" value = "Show the file" />
+                </div>
+            </div>
+            
             <div class="pdf">
-                <object type="application/pdf" data="Assignment1.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" id="pdf_content">
-                    <p>Insert your error message here, if the PDF cannot be displayed.</p>
+                <object id="pdf_content" type="application/pdf" data="Assignment1.pdf" >
+                    <p>Some error here</p>
                 </object>
             </div>
         </div>

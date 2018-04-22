@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bullet Subtitles For A PDF
+        </title>
+        <script language="JavaScript">
+            function myFunction() {
+                var x = document.getElementById("pdf_content").data;
+               var ch = checkFileInput();
+               if(ch == true){
+                   document.getElementById("pdf_content").data = getFilePath();
+                    displayFile('pdf');
+               }else{
+                   alert("Please enter your PDF file.");
+               }
+               alert(getFilePath());
+            }
+            
+            function checkFileInput(){
+                var check = false;
+                if(document.getElementById("fileName").value!=null){
+                    check = true;
+                }
+                return check;
+                
+            }
+            function getFilePath(){
+                var fullPath = document.getElementById("fileName").value;
+                var simpleFN = fullPath.split(/(\\|\/)/g).pop();
+                
+                return simpleFN;
+            }
+            function displayFile(el){
+                var elems =document.getElementsByClassName(el);
+                for (var i=0;i<elems.length;i+=1){
+                    if(elems[i].style.display == 'block'){
+                        elems[i].style.display = 'none';
+                    }else{
+                        elems[i].style.display = 'block'
+                    }
+                }
+                
+                return;
+            }
+        </script>
+        <style>
+            body{
+                text-align: center;
+            }
+            
+            form{
+                padding: 10px;
+                width: 50%;
+                text-align: right
+                
+            }
+            
+            .rightBtn{
+                margin: -30px 0 0 0;
+                float: right;
+                width: 50%;
+                text-align: left;
+            }
+            .pdf{
+                display: none;
+            }
+            #pdf_content{
+                width: 400px;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <header>
+        <div class = "headerCont">
+            <h1>Bullet Subtitles For A PDF</h1>
+        </div>
+        
+    </header>
+    <body>
+        <form enctype="multipart/form-data" method="post">
+            <input type="file" name="file" id = "fileName"/>
+            <input type="hidden" name="MAX_FILE_SIZE" value="204800" />
+            <input type="hidden" name="type" value="webfile"/>
+        </form>
+        
+        <div class = "rightBtn">
+            <input id = "btn" type="submit" name = "submit" value = "Show the file" onclick="myFunction()"/>
+        </div>
+        <div class = "pdf">
+            <object id="pdf_content" type = "application/pdf" data="Assignment1.pdf">
+            </object>
+        </div>
+
+    </body>
+</html>
