@@ -2,11 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        
         <title>Bullet Subtitles For A PDF
         </title>
         <script language="JavaScript">
             function myFunction() {
-                var x = document.getElementById("pdf_content").data;
+               var x = document.getElementById("pdf_content").data;
                var ch = checkFileInput();
                if(ch == true){
                    document.getElementById("pdf_content").data = getFilePath();
@@ -14,7 +15,7 @@
                }else{
                    alert("Please enter your PDF file.");
                }
-               alert(getFilePath());
+               //alert(getFilePath());
             }
             
             function checkFileInput(){
