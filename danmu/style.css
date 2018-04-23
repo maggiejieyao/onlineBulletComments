@@ -1,0 +1,161 @@
+*{  
+    margin: 0;  
+    padding: 0;  
+}  
+
+body{
+    background-color:floralwhite;
+}
+#navBar{  
+    width: 50%;  
+    height: 400px;  
+    padding-bottom:40px;  
+    border: 1px solid #000;  
+    margin: 1% auto 0;  
+    position: relative;  
+    background: #ccc;  
+    
+}  
+
+#navBar #pdf{  
+    width:100%;  
+    height:100%;  
+    background:#fcfcfc;  
+    text-align:center;  
+}  
+
+#navBar .dm_tool{  
+    width: 100%;  
+    height: 40px;  
+    background: #ccc;  
+    margin-top:1px;  
+    bottom: 0;  
+    display: flex;  
+}  
+
+#navBar .dm_tool .dm_con{  
+    width: 89%;  
+    height: 38px;  
+    outline: none;  
+    border: 1px solid #ccc;  
+    padding-left: 10px;  
+    float: left;      
+}  
+
+#navBar .dm_tool .sendToDm{  
+    width: 9.7%;  
+    background: #ED8F5B;  
+    color: black;  
+    outline: none;  
+    border: 0;    
+    cursor:pointer;  
+}  
+
+#navBar .dmArea{  
+    width:100%;  
+    height:400px;  
+    top:0;  
+    left:0;  
+    position:absolute;  
+    z-index:10;  
+    overflow:hidden;  
+}  
+
+#navBar .dmArea span{  
+    white-space:nowrap;  
+    position:absolute;
+    color: #58392A;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+form{
+    padding: 10px 10px 10px 0;
+    width: 50%;
+    text-align: right;
+    z-index:100;
+}
+
+.rightBtn{
+    margin: -30px 0 0 0;
+    float: right;
+    width: 40%;
+}
+
+.pdf{
+    display: none;
+}
+
+#pdf_content{
+    width: 400px;
+    height: 500px;
+}
+
+.headerContent{
+    padding: 30px;
+    background-color: #606060;
+
+}
+
+.headerContent ul{
+    list-style-type: none;
+    color: white;
+}
+
+.projectName{
+    margin-left: 20px;
+    font: 50 25px/1.2 'Merienda One', Helvetica, sans-serif;
+    color: white;
+    text-shadow: 3px 3px 3px #505050;
+}
+
+.gitLogo{
+    float: right;
+    margin-top: -40px;
+    text-align: right;
+}
+
+.gitLogo img{
+    width: 10%;
+}
+.gitLogo a{
+    text-decoration: none;
+}
+
+.openPage{
+    width: 100%;
+    height: 550px;
+    position: relative;
+    background: url(images/background.jpg)  0 -50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.openTitle{
+    text-align: center;
+    padding-top: 220px;
+    font: 80 40px/1.2 'Merienda One', Helvetica, sans-serif; 
+    color: white;
+    text-shadow: 3px 3px 3px #505050;
+}
+
+.introduction{
+    z-index: 99;
+    text-align: center;
+    padding: 100px;
+    font: 100 2.5em/125% 'Tangerine', Helvetica, Sans-serif;
+	color: #58392A;
+}
+
+footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #606060;
+}
+
+footer p{
+    text-align: center;
+    font: 40 20px/1.2 'Merienda One', Helvetica, sans-serif; 
+    color: white;
+    text-shadow: 3px 3px 3px #505050;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="utf-8">  
+        <title></title>
+        
+        <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine" />
+        
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+        
+        <script src = "javascript.js"></script>
+    </head>   
+  
+    <body>
+        <div class="headerContent">
+            <ul>
+                <li class ="projectName">DanmuPDF</li>
+                <li class = "gitLogo"><a href ="https://github.com/maggiejieyao/onlineBulletComments.git"><img src = "images/Github-icon.png"/></a></li>
+            </ul>
+        </div>
+        
+        <div class="openPage">
+            <div class = "openTitle">
+                <h>Bullet Comments For PDF</h>
+            </div>
+            
+        </div>
+        
+        <div class = "introduction">
+            <h3>DanmuPDF is a website can help you to send bullet comments to a pdf file<br>It will add more entretainment for people look at the same pdf</h3>
+        </div>
+        
+        <form enctype="multipart/form-data" method="post">
+            <input type="file" name="file" id = "fileName"/>
+            <input type="hidden" name="MAX_FILE_SIZE" value="204800" />
+            <input type="hidden" name="type" value="webfile"/>
+        </form>
+
+        <div class = "rightBtn">
+            <input id = "btn" type="submit" name = "submit" value = "Show the file" onclick="myFunction()"/>
+        </div>
+
+        <div id="navBar">  
+            <div id="pdf">
+                <object id="pdf_content" type = "application/pdf" data="testPDF.pdf" style="width: 630px; height: 400px">
+                    </object>
+            </div>  
+            <div class="dm_tool">  
+                <input type="text" placeholder="say something..." name="dm_con" class="dm_con" />  
+                <button class="sendToDm">Send</button>  
+            </div>  
+            <div class="dmArea">  
+                <!--span>Center Comments</span-->  
+            </div>  
+        </div>  
+        <footer>
+            <p>Maggie Wu</p>
+        </footer>
+    </body>  
+  
+</html>
