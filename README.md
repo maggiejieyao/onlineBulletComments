@@ -16,6 +16,7 @@ PHP-5.3.10 version+ and PHP7
 gcc4.4 version+ or clang
 
 If you use the window system, you can build the enviroment use cygwin, here's the steps:
+
     > install cygwin, including(gcc, autoconf, php, and pcre-dev) 4 packages
     
     > open the php.ini(php -i|grep php.ini ), and add the "extension=swoole.so"
